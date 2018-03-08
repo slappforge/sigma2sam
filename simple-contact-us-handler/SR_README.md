@@ -2,7 +2,7 @@
 
 This is a sample application developed to demonstrate the use of AWS Lambda, DynamoDB and API Gateway to implement a simple contact us form for a static web site.
 
-Made with ❤️ by SLAppForge
+Made with ❤️ by [SLAppForge](https://slappforge.com/)
 
 ## Deploy with CloudFormation
 
