@@ -4,3 +4,13 @@ This repository contains Sigma samples that have been converted into SAM templat
 
 * simple-contact-us-handler
 
+## Table of Contents
+* **[Getting Started](#getting-started)**
+     * **[Prerequisites](#prerequisites)**
+     
+## Getting Started
+
+### Prerequisites
+- AWS CLI
+- Node.js
+- AWS S3 bucket to host artifacts
