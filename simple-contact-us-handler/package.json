@@ -1,0 +1,21 @@
+{
+  "name": "simple-contact-us-handler",
+  "version": "1.0.0",
+  "description": "DynamoDB and API Gateway have been used to implement a simple contact us form for a static web site.",
+   "scripts": {
+    "build": "node node_modules/gulp/bin/gulp.js",
+    "package": "aws cloudformation package --template-file cloudformation.yaml --s3-bucket $DEPLOYMENT_S3_BUCKET --output-template-file cloudformation-packaged.yaml",
+    "deploy": "aws cloudformation deploy --template-file cloudformation-packaged.yaml --stack-name contact-us-stack --capabilities CAPABILITY_IAM"
+  },
+  "dependencies": {
+    "aws-sdk": "2.176.0",
+    "@slappforge/slappforge-sdk": "0.0.3",
+    "validate.js": "0.12.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-zip": "^4.1.0",
+    "jshint": "^2.9.5"
+  }
+}
