@@ -2,6 +2,8 @@ let AWS = require('aws-sdk');
 const ddb = new AWS.DynamoDB.DocumentClient();
 const validate = require("validate.js");
 exports.handler = function (event, context, callback) {
+	//due to lambda proxy integration
+	event = JSON.parse(event.body) 
 	//validating email and name
 	var constraints = {
 		email: {
@@ -32,12 +34,12 @@ exports.handler = function (event, context, callback) {
 			}
 		}, function (err, data) {
 			if (err) {
-				callback(err, null);
+				callback({body: err}, null);
 			} else {
-				callback(null, "Successfully Saved Entry!");
+				callback(null, {body: "Successfully Saved Entry!"});
 			}
 		});
 	} else {
-		callback(JSON.stringify(invalid), null);
+		callback({body: invalid}, null);
 	}
 }
