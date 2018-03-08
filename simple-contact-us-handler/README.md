@@ -3,6 +3,9 @@
 This is a sample application developed with revolutionary serverless IDE Sigma, to demonstrate the use of AWS Lambda, DynamoDB and API Gateway to implement a simple contact us form for a static web site.
 
 ## Deploy with CloudFormation
+
+Prerequisites: [Node.js](https://nodejs.org/en/) and [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) should be installed
+
 ### Packaging
 
 Deploying this serverless app to your AWS account can be done using [AWS CloudFormation](https://aws.amazon.com/cloudformation/). 
@@ -10,19 +13,19 @@ Navigate it into the folder simple-contact-us-handler.
 With the [AWS CLI](https://aws.amazon.com/cli/) installed, run the following command to upload the code to S3. Ensure that you set the environment variable `DEPLOYMENT_S3_BUCKET`; CloudFormation will copy the code function as a ZIP file in this S3 bucket, which can be deployed to AWS Lambda by following the below steps. 
 
 * Store the name of your S3 bucket in a shell variable:
-	export DEST_BUCKET=bucket
+	* `export DEST_BUCKET=bucket`
 
 * Install the node modules required:
-	npm install
+	* `npm install`
 	
 * Build:
-	npm run build
+	* `npm run build`
 
 * Upload the package to S3, transform the CloudFormation template:
-	npm run package
+	* `npm run package`
 	
 * Deploy to CloudFormation:
-	npm run deploy
+	* `npm run deploy`
 
 Now you will have `cloudformation-packaged.yaml`, which contains the full path to the ZIP file created by the previous step. 
 You will be able to deploy your stack using the following command. 
